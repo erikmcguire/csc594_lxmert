@@ -1,6 +1,6 @@
 # CSC 594: Human-like Visual Question Answering with Multimodal Transformers
 
-A class project for DePaul University, Fall 2020. Intended, as usual, for learning purposes: in this case to explore multimodality, mmulti-head self-attention, human data, et cetera. Please forgive any mistakes and misconceptions.
+A class project for DePaul University, Fall 2020. Intended, as usual, for learning purposes: in this case to explore multimodality, multi-head self-attention, human data, et cetera. Please forgive any mistakes and misconceptions.
 
 - [Training notebook](https://colab.research.google.com/drive/1jvcd8S5JgNPPBgXwQi6ti2txMxa5LpVP)
 - [Evaluation notebook](https://colab.research.google.com/drive/1zsxaGkp-EetLgp1dRk6IdMv4oc7JmMRL)
