@@ -42,7 +42,7 @@ def parse_args():
                          help='last, avg, every')
     parser.add_argument('--head_handling',
                          type=str,
-                         default='max',
+                         default='avg',
                          help='last, avg, max')
     parser.add_argument('--ablation',
                          type=str,
@@ -115,7 +115,7 @@ def parse_args():
     parser.add_argument('--save_preds',
                         type=bool,
                         default=None)
-                        
+
     # Parse the arguments.
     args = parser.parse_args()
 
