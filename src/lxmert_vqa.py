@@ -296,30 +296,22 @@ def visualize_pred(im_path, boxes, ref_vis_weights, ref_x_attentions,
         fig, ax = plt.subplots()
         ax.imshow(hum_ocr_att)
         plt.show()
-    elif modality == "Cross":
+    elif modality == "Cross" or modality != "Text":
         if average:
             att_weights = torch.mean(att_weights[layer-1][0],
                                      dim=0).detach().numpy()
         else:
             att_weights = att_weights[layer-1][0][head-1].detach().numpy()
-        M = min(len(boxes), len(np.transpose(att_weights)))
+        if modality == "Cross":
+            M = min(len(boxes), len(np.transpose(att_weights)))
+            mod = "Cross"
+        elif modality != "Text":
+            M = min(len(boxes), len(att_weights))
+            mod = "Vision"
         im_ocr_att, hmboxes = attention_bbox_interpolation(im=im,
                                                            bboxes=boxes[:M],
                                                            att=att_weights[:M],
-                                                           modality="Cross",
-                                                           hm=hmrsz,
-                                                           saveb=saveb)
-        plt.imshow(im_ocr_att)
-    elif modality != "Text":
-        if average:
-            att_weights = torch.mean(att_weights[layer-1][0],
-                                     dim=0).detach().numpy()
-        else:
-            att_weights = att_weights[layer-1][0][head-1].detach().numpy()
-        M = min(len(boxes), len(att_weights))
-        im_ocr_att, hmboxes = attention_bbox_interpolation(im, boxes[:M],
-                                                           att_weights[:M],
-                                                           modality="Vision",
+                                                           modality=mod,
                                                            hm=hmrsz,
                                                            saveb=saveb)
         plt.imshow(im_ocr_att)
