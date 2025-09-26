@@ -4,6 +4,7 @@ A class project for DePaul University, Fall 2020. Intended, as usual, for learni
 
 - [Training notebook](https://colab.research.google.com/drive/1jvcd8S5JgNPPBgXwQi6ti2txMxa5LpVP)
 - [Evaluation notebook](https://colab.research.google.com/drive/1zsxaGkp-EetLgp1dRk6IdMv4oc7JmMRL)
+- [Paper](https://github.com/erikmcguire/csc594_lxmert/blob/main/csc594-mcguire_erik-report.pdf)
 
 ## Abstract
 
